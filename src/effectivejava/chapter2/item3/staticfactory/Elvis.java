@@ -4,6 +4,7 @@ package effectivejava.chapter2.item3.staticfactory;
 public class Elvis {
     private static final Elvis INSTANCE = new Elvis();
     private Elvis() { }
+    //公有成员是静态工厂方法
     public static Elvis getInstance() { return INSTANCE; }
 
     public void leaveTheBuilding() {

@@ -1,0 +1,12 @@
+Singleton是指仅仅被实例化一次的类，通常被用来代表一个无状态的对象，或者本质上唯一的系统组件。
+要注意使类成为Singleton会使它的客户端测试变得十分困难，因为不可能给Singleton替换模拟实现，除非实现一个充当其类型的皆苦。
+
+实现Singleton有两种常见的方法。两种方法都要保持构造器为私有的，并导出公有的静态成员，以便允许客户端能够访问该类的唯一实例。
+1、field.Elvis 公有静态成员是个final域
+2、staticfactory 公有的成员是个静态工厂方法
+为了利用上述方法实现的Singleton类变成是可序列化的，仅仅在声明中加上implements Serializable是不够了，为了维护并保证
+Singleton，必须声明所有实例都是瞬时的，并提供一个readResolve方法。否则每次反序列化一个序列化的实例，都会创建一个新的实例，
+private Object readResolve(){
+    return INSTANCE;
+}
+3、enumtype.Elvis 声明一个包含单个元素的枚举类型

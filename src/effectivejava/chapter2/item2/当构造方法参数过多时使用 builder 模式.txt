@@ -1,2 +1,8 @@
 当构造方法参数过多时（单某些参数为必选，一些参数为可选）使用 builder 模式（建造者模式）
 
+1、telescopingconstructor.NutritionFacts 传统采用重叠构造器的模式。
+2、javabeans.NutritionFacts javabeans模式。
+3、builder.NutritionFacts 建造者模式
+4、hierarchicalbuilder Builder模式也适用于类层次结构，使用平行层次结构的builder时，各自嵌套在相应的类种。
+抽象类有抽象的builder，具体类有具体的builder。
+Pizza抽象类表示各式各样的披萨，NyPizza表示经典纽约风味的披萨，Calzone表示馅料内置的半月形披萨。PizzaTest测试类
