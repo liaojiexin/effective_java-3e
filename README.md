@@ -10,7 +10,7 @@
   提取码：8wky
 
 ---
-chapter2：
+chapter2：创建和销毁对象
 
     1.考虑使用静态工厂方法替代构造方法--->无
     优点：
@@ -43,4 +43,6 @@ chapter2：
     
     9.try-with-resources优先与try-finally--->chapter2.item9
     
-chapter3：
+chapter3：对于所有对象都通用的方法
+    
+    10.覆盖equals时请遵守通用约定--->chapter3.item10
