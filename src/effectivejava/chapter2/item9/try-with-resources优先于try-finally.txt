@@ -1,0 +1,11 @@
+try-with-resources优先于try-finally
+try-finally语句确保资源会被适时关闭的最佳方法，就算发生异常或者返回也一样，但是
+try-finally存在许多不足，例如存在多个需要关闭的资源需要使用嵌套多个try-fianlly，
+try和finally块中的代码都会抛出异常，这样后面的异常完全抹除第一个异常，这样会照成调试更加困难，因为不知道try中的异常发生原因
+
+1.tryfinally.TopLine try-fianlly关闭资源
+2.tryfinally.Copy 多个资源关闭时使用try-finally需嵌套多个
+3.trywithresources.Copy/TopLine 对应前面tryfinally包中的代码，使用try-with-resources来关闭资源，
+要关闭的对象要先实现AutoCloseable接口，同时可能抛出多个异常时，第一个异常会先被保留，后面异常就会被禁止，另外这些被禁用
+的异常也不是简单地被抛弃掉，而是会打印在堆栈轨迹中，并注明它们时被禁止的异常。通过getSupperssed方法还可以访问它们
+4.trywithresources.TopLineWithDefault try-with-resources和catch结合使用
