@@ -6,6 +6,7 @@ import java.util.*;
 // Test program that uses CounterPoint as Point
 public class CounterPointTest {
     // Initialize unitCircle to contain all Points on the unit circle  (Page 43)
+    //来判断一个 Point 对象是否在 unitCircle 集合中
     private static final Set<Point> unitCircle = Set.of(
             new Point( 1,  0), new Point( 0,  1),
             new Point(-1,  0), new Point( 0, -1));

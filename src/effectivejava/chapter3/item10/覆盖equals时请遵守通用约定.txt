@@ -21,4 +21,5 @@ x.equals(z)也必须返回true。
 5.对于任何非null的引用值x，x.equals(null)必须返回false。
 
 1.CaseInsensitiveString 违反对称性
-2.Point\inheritance.ColorPoint 违反传递性
+2.Point\inheritance.ColorPoint 违反对称性(Point的第一个equals和ColorPoint的第一个equals)和传递性(Point的第一个equals和ColorPoint的第二个equals),
+解决方法：Point第二个equals/inheritance.CounterPointTest/inheritance.CounterPoint/composition.ClorPoint
