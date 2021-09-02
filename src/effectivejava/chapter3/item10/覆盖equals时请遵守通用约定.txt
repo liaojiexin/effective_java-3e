@@ -18,8 +18,8 @@
 x.equals(z)也必须返回true。
 4.一致性：对于任何非null的引用值x和y，只要equals的比较操作在对象中所用的信息没有被修改，多次调用x.equals(y)
 就会一致地返回true，或者一致地返回false。
-5.对于任何非null的引用值x，x.equals(null)必须返回false。
+5.对于任何非null的引用值x，x.equals(null)必须返回false。（一般在equals中进行转换之前必须使用instanceof操作符，检查其参数类型是否正确，可以防止违反非空性）
 
 1.CaseInsensitiveString 违反对称性
-2.Point\inheritance.ColorPoint 违反对称性(Point的第一个equals和ColorPoint的第一个equals)和传递性(Point的第一个equals和ColorPoint的第二个equals),
+2.（代码疑惑，待重看）Point\inheritance.ColorPoint 违反对称性(Point的第一个equals和ColorPoint的第一个equals)和传递性(Point的第一个equals和ColorPoint的第二个equals),
 解决方法：Point第二个equals/inheritance.CounterPointTest/inheritance.CounterPoint/composition.ClorPoint

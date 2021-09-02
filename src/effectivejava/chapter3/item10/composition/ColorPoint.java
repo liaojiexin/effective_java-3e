@@ -6,6 +6,7 @@ import effectivejava.chapter3.item10.Point;
 import java.util.Objects;
 
 // Adds a value component without violating the equals contract (page 44)
+//复合优先于继承
 public class ColorPoint {
     private final Point point;
     private final Color color;
