@@ -17,12 +17,12 @@ public final class PhoneNumber {
     }
 
     @Override public boolean equals(Object o) {
-        if (o == this)
+        if (o == this)  //诀窍1
             return true;
-        if (!(o instanceof PhoneNumber))
+        if (!(o instanceof PhoneNumber))    //诀窍2
             return false;
-        PhoneNumber pn = (PhoneNumber)o;
-        return pn.lineNum == lineNum && pn.prefix == prefix
+        PhoneNumber pn = (PhoneNumber)o;    //诀窍3
+        return pn.lineNum == lineNum && pn.prefix == prefix     //诀窍4
                 && pn.areaCode == areaCode;
     }
 

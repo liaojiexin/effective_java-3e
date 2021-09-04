@@ -2,6 +2,7 @@ package effectivejava.chapter3.item11;
 import java.util.*;
 
 // Shows the need for overriding hashcode when you override equals (Pages 50-53 )
+//为不相等的对象产生不相等的散列码，理想情况下散列函数应该把集合中不相等的实例均匀地分布到所有可能的int值上。
 public final class PhoneNumber {
     private final short areaCode, prefix, lineNum;
 
@@ -29,7 +30,18 @@ public final class PhoneNumber {
 
 
     // Broken with no hashCode; works with any of the three below
-
+    //1、声明一个int变量并命名为result，将它初始化为对象中第一个关键的散列码c，如2.a中计算所示
+    //2、对象中剩下的每一个关键域f都完成以下步骤：
+    // a.为该域计算int类型的散列码c
+    //      Ⅰ.如果该域是基本类型，则计算Type.hashCode(f)，这里的Type是装箱基本类型的类，与f的类型相对应。
+    //      Ⅱ.如果该域是一个对象引用，并且该类的equals方法通过递归地调用equals的方式来比较这个域，则同样为这个
+    //          域递归地调用hashCode。如果需要更复杂的比较，则为这个域计算一个“范式”，然后针对这个范式调用hashCode。
+    //          如果这个域的值为null，则返回0(或者其他某个常数，但通常是0)
+    //      Ⅲ.如果该域是一个数组，则要把每一个元素当作单独的域来处理。也就是说，递归地应用上述规则，对每个重要的元素
+    //          计算一个散列码，然后根据步骤2.b中的做法把这些散列值组合起来。如果数组域中没有重要的元素，可以使用一个
+    //          常数，但最好不要用0。如果数组域中的所有元素都很重要可以使用Arrays.hashCode方法。
+    // b.按照下面的公式，把步骤2.a中计算得到的散列码c合并到result中
+    //3、返回result
 //    // Typical hashCode method (Page 52)
 //    @Override public int hashCode() {
 //        int result = Short.hashCode(areaCode);

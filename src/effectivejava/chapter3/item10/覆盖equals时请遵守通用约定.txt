@@ -23,3 +23,18 @@ x.equals(z)也必须返回true。
 1.CaseInsensitiveString 违反对称性
 2.（代码疑惑，待重看）Point\inheritance.ColorPoint 违反对称性(Point的第一个equals和ColorPoint的第一个equals)和传递性(Point的第一个equals和ColorPoint的第二个equals),
 解决方法：Point第二个equals/inheritance.CounterPointTest/inheritance.CounterPoint/composition.ClorPoint
+
+-----------------------------------------------
+实现高质量equals方法的诀窍
+1.使用==操作符检查“参数是否为这个对象的引用”。
+2.使用instanceof操作符检查“参数是否为正确的类型”。
+3.把参数转换为正确类型。
+4.对于该类中的每个“关键”域，检查参数中的域是否与该对象中对应的域相匹配。
+在编写完equals方法后要反问自己三个问题：是否对称的、传递的、一致的。（一般自反性和非空性会自动满足）
+
+例子：PhoneNumber
+
+最后告诫
+1.覆盖equals时总要覆盖hashCode
+2.不要企图让equals方法过于智能
+3.不要将equals声明中的Object对象替换为其他的类型

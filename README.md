@@ -46,3 +46,5 @@ chapter2：创建和销毁对象
 chapter3：对于所有对象都通用的方法
     
     10.覆盖equals时请遵守通用约定--->chapter3.item10
+    
+    11.覆盖equals时总要覆盖hashCode--->chapter3.item11
