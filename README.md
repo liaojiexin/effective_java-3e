@@ -22,29 +22,20 @@ chapter2：创建和销毁对象
     缺点：
     - 类如果不含公有或者受保护的构造器，就不能被子类化
     - 程序员很难发现它们，在API文档中，它们没有像构造器那样在API文档中明确标识出来
-
-    2.当构造方法参数过多时使用 **builder** **模式**（建造者模式）--->chapter2.item2
-
+    2.当构造方法参数过多时使用 **builder** **模式**（建造者模式）--->chapter2.item
     3.用私有构造器或者枚举类型强化Singleton属性--->chapter2.item3
-
     4.通过私有构造器强化不可实例化的能力--->chapter2.item4
-
     5.优先考虑依赖注入来引用资源--->无
-
     不要用Singleton和静态工具类来实现依赖一个或者多个底层资源的类，且该资源的行为会影响
     到该类的行为；也不要直接用这个类来创建这些资源。而应该将这些资源或者工厂传给构造器，
     通过它们来创建类。
-
     6.避免创建不必要的对象--->chapter2.item6
-
     7.消除过期的对象引用--->chapter2.item7
-
-    8.避免使用终结方法和消除方法--->chapter2.item8
-    
+    8.避免使用终结方法和消除方法--->chapter2.item8    
     9.try-with-resources优先与try-finally--->chapter2.item9
     
 chapter3：对于所有对象都通用的方法
-    
+
     10.覆盖equals时请遵守通用约定--->chapter3.item10
-    
     11.覆盖equals时总要覆盖hashCode--->chapter3.item11
+    12.始终要覆盖toString--->chapter3.item12

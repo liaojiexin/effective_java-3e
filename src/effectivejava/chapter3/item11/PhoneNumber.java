@@ -52,10 +52,13 @@ public final class PhoneNumber {
 
 //    // One-line hashCode method - mediocre performance  (page 53)
 //    @Override public int hashCode() {
+            //hash方法和上面一样，不过运行速度慢了点，因为它们会引发数组的创建，以便传入数目可变的参数，如果有基本类型还会有拆箱装箱操作
 //        return Objects.hash(lineNum, prefix, areaCode);
 //    }
 
-//    // hashCode method with lazily initialized cached hash code  (page 53)
+//    // hashCode method with lazily initialized cached hash code  (page 53)  延迟初始化
+    //如果一个类是不可变的，并且计算散列码的开销也比较大，就应该考虑把散列码缓存在对象内部，而不是每次请求
+    //的时候都重新计算散列码。
 //    private int hashCode; // Automatically initialized to 0
 //
 //    @Override public int hashCode() {
