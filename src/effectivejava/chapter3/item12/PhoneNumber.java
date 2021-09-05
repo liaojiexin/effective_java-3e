@@ -33,7 +33,7 @@ public final class PhoneNumber {
         return result;
     }
 
-    /**
+    /**     无论是否决定指定格式，都应该在文档中明确地表明你的意图。
      * Returns the string representation of this phone number.
      * The string consists of twelve characters whose format is
      * "XXX-YYY-ZZZZ", where XXX is the area code, YYY is the

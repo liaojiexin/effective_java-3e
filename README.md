@@ -39,3 +39,4 @@ chapter3：对于所有对象都通用的方法
     10.覆盖equals时请遵守通用约定--->chapter3.item10
     11.覆盖equals时总要覆盖hashCode--->chapter3.item11
     12.始终要覆盖toString--->chapter3.item12
+    13.谨慎地覆盖clone--->chapter3.item13
