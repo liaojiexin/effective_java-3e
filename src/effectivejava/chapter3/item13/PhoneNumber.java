@@ -56,7 +56,7 @@ public final class PhoneNumber implements Cloneable {
     // Clone method for class with no references to mutable state (Page 59)
     @Override public PhoneNumber clone() {
         try {
-            return (PhoneNumber) super.clone();
+            return (PhoneNumber) super.clone(); //因为该类的属性都为final ，即不可变的类，所以直接调用Object的clone
         } catch (CloneNotSupportedException e) {
             throw new AssertionError();  // Can't happen
         }
