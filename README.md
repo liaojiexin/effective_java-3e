@@ -40,3 +40,4 @@ chapter3：对于所有对象都通用的方法
     11.覆盖equals时总要覆盖hashCode--->chapter3.item11
     12.始终要覆盖toString--->chapter3.item12
     13.谨慎地覆盖clone--->chapter3.item13
+    14.考虑实现Comparable接口--->chapter3.item14

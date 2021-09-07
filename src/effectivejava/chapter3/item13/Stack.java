@@ -32,7 +32,7 @@ public class Stack implements Cloneable {
     @Override public Stack clone() {
         try {
             Stack result = (Stack) super.clone();
-            result.elements = elements.clone();
+            result.elements = elements.clone();     //在elements数组中递归调用clone
             return result;
         } catch (CloneNotSupportedException e) {
             throw new AssertionError();

@@ -1,0 +1,22 @@
+考虑实现Comparable接口
+compareTo 方法并没有在 Object 类中声明。 相反，它是 Comparable 接口中的唯一方法。
+它与 Object 类的 equals 方法在性质上是相似的，除了它允许在简单的相等比较之外的顺序比较，它
+是泛型的。 通过实现 Comparable 接口，一个类表明它的实例有一个自然顺序（ natural ordering）。
+实现Comparable接口的对象数组进行排序就是这么简单：Arrays.sort(a)
+
+WordList类 依赖于实现了Comparable接口的String类，它去掉了命令行参数列表中的重复参数，并按字母顺序打印出来
+
+
+compareTo 方法的通用约定与 equals 相似：
+将此对象与指定的对象按照排序进行比较。 返回值可能为负整数，零或正整数，因为此对象对应小于，等于或
+大于指定的对象。 如果指定对象的类型与此对象不能进行比较，则引发 ClassCastException 异常。
+下面的描述中，符号 sgn(expression) 表示数学中的 signum 函数，它根据表达式的值为负数、零、正数，对应返
+回-1、0 和 1。
+- 实现类必须确保所有 x 和 y 都满足 sgn(x.compareTo(y)) == -sgn(y. compareTo(x)) 。 （这意味着
+当且仅当 y.compareTo(x) 抛出异常时， x.compareTo(y) 必须抛出异常。）
+- 实现类还必须确保该关系是可传递的： (x. compareTo(y) > 0 && y.compareTo(z) > 0) 意味着
+x.compareTo(z) > 0 。
+- 最后，对于所有的 z，实现类必须确保 x.compareTo(y) == 0 意味着 sgn(x.compareTo(z)) == sgn(y.compareTo(z)) 。
+- 强烈推荐 x.compareTo(y) == 0) == (x.equals(y)) ，但不是必需的。 一般来说，任何实现了
+Comparable 接口的类违反了这个条件都应该清楚地说明这个事实。 推荐的语言是“注意：这个类有一个自然
+顺序，与 equals 不一致”。
