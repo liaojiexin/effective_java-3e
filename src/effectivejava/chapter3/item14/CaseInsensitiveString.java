@@ -4,7 +4,7 @@ import java.util.*;
 
 // Single-field Comparable with object reference field  (Page 69)
 public final class CaseInsensitiveString
-        implements Comparable<CaseInsensitiveString> {
+        implements Comparable<CaseInsensitiveString> {  //实现了接口 ,意味着CaseInsensitiveString只能和另一个CaseInsensitiveString比较
     private final String s;
 
     public CaseInsensitiveString(String s) {
@@ -26,6 +26,7 @@ public final class CaseInsensitiveString
     }
 
     // Using an existing comparator to make a class comparable
+    //使用一个已有的比较器
     public int compareTo(CaseInsensitiveString cis) {
         return String.CASE_INSENSITIVE_ORDER.compare(s, cis.s);
     }
