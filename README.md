@@ -41,3 +41,7 @@ chapter3：对于所有对象都通用的方法
     12.始终要覆盖toString--->chapter3.item12
     13.谨慎地覆盖clone--->chapter3.item13
     14.考虑实现Comparable接口--->chapter3.item14
+
+chapter4：类和接口
+    
+    15.使类和成员的可访问性最小
